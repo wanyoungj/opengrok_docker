@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install opengrok
-RUN mkdir /opengrok && wget https://github.com/OpenGrok/OpenGrok/releases/download/1.1-rc5/opengrok-1.1-rc5.tar.gz && tar xf opengrok-1.1-rc5.tar.gz -C /opengrok
+RUN mkdir /opengrok && wget https://github.com/OpenGrok/OpenGrok/releases/download/1.1-rc5/opengrok-1.1-rc5.tar.gz && tar xf opengrok-1.1-rc5.tar.gz -C /opengrok --strip-components=1
 RUN rm -f opengrok-1.1-rc5.tar.gz
 
 # Deploy opengrok
